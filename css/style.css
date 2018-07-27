@@ -1,0 +1,464 @@
+body {
+    font-family: "Gloria Hallelujah", cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: black;
+    height: 100vh;
+}
+
+#infoModal {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    padding-top: 15vh;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#rulesModal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 15vh;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#infoModal:hover,
+#rulesModal:hover {
+    cursor: pointer;
+}
+
+.infoModalContent,
+#rules {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    padding: 0 2vw;
+    border: 1px solid #888;
+    width: 75vw;
+    border-radius: 1vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    -webkit-animation-name: slidedown;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slidedown;
+    animation-duration: 0.4s;
+}
+
+.infoModalContent:hover,
+#rules:hover {
+    cursor: auto;
+}
+
+.infoModalBody,
+.rulesModalBody {
+    margin-top: 10vh;
+}
+
+@keyframes slidedown {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7vh;
+    height: 7vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    background-color: rgb(255, 0, 84);
+    border-radius: 1vh;
+    overflow: hidden;
+    color: white;
+}
+
+.headerGame {
+    width: inherit;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(233, 205, 0);
+}
+
+.fightBox {
+    width: inherit;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerGame {
+    width: inherit;
+    height: 10vh;
+    background-color: rgb(233, 205, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    padding-bottom: 8vh;
+    text-align: center;
+}
+
+h2 {
+    padding: 0 1vw;
+    text-align: center;
+}
+
+.score {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.weaponButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+.weapons {
+    margin: 5vh;
+    background-color: rgb(9, 169, 213);
+    width: 17vw;
+    height: 10vh;
+    font-size: 2em;
+    border-radius: 1vh;
+    z-index: 1;
+}
+
+.weapons:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fightHands {
+    position: relative;
+    width: 60vw;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fightHandHuman,
+.fightHandComputer {
+    width: 15vw;
+    height: 15vw;
+}
+
+#humanFight {
+    position: absolute;
+    left: 5vw;
+}
+#computerFight {
+    position: absolute;
+    left: 45vw;
+    transform: scaleX(-1);
+}
+
+#rulesBtn {
+    color: white;
+    width: 7vw;
+    padding: 1vw;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#changePlayerModeBtn {
+    width: 22vw;
+    padding: 1vw;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#rulesBtn:hover,
+#changePlayerModeBtn:hover {
+    cursor: pointer;
+}
+
+#closeRules,
+#closeInfo {
+    color: black;
+    font-size: 7vh;
+    font-weight: bold;
+}
+
+#closeRules,
+#closeInfo:hover {
+    cursor: pointer;
+}
+
+#gameBtns {
+    position: absolute;
+    margin-top: 24vh;
+    height: 5vh;
+    width: 45vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#tryAgainBtn,
+#startNewGameBtn {
+    width: 18vw;
+    height: 10vh;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 1vh;
+    background-color: rgb(9, 169, 213);
+}
+
+#tryAgainBtn:hover,
+#startNewGameBtn:hover {
+    cursor: pointer;
+}
+
+#resultText {
+    position: fixed;
+    top: 47vh;
+    text-align: center;
+    font-size: 2em;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (min-width: 540px) and (max-width: 1130px) {
+    h1 {
+        padding-bottom: 0;
+        font-size: 1.5em;
+        width: 32vw;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    .weapons {
+        font-size: 1.3em;
+    }
+
+    #changePlayerModeBtn {
+        font-size: 1em;
+    }
+
+    #rulesBtn {
+        font-size: 1em;
+        width: 10vw;
+    }
+
+    #resultText {
+        top: 45vh;
+        font-size: 1.3em;
+    }
+
+    #gameBtns {
+        margin-top: 23vh;
+    }
+
+    #startNewGameBtn,
+    #tryAgainBtn {
+        width: 15vw;
+        height: 8vh;
+        font-size: 1em;
+    }
+
+    #rulesModal {
+        width: 82vw;
+        height: 93vh;
+        left: 5vw;
+        top: 2vh;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 540px) {
+    h1 {
+        padding-bottom: 0;
+        font-size: 1.5em;
+        width: 30vw;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .weapons {
+        font-size: 1.3em;
+    }
+
+    #changePlayerModeBtn {
+        font-size: 0.8em;
+    }
+
+    #rulesBtn {
+        font-size: 0.8em;
+    }
+
+    #startNewGameBtn,
+    #tryAgainBtn {
+        width: 15vw;
+        height: 8vh;
+        font-size: 1em;
+    }
+
+    #rulesModal {
+        width: 82vw;
+        height: 93vh;
+        left: 5vw;
+        top: 2vh;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        padding-bottom: 0;
+        font-size: 1em;
+        width: 40vw;
+        top: 0vh;
+        position: absolute;
+        left: 30vw;
+    }
+
+    h2 {
+        font-size: 0.9em;
+    }
+
+    .playerColumn {
+        width: 28vw;
+        height: 26vh;
+        margin-top: 3vh;
+        font-size: 0.8em;
+    }
+
+    .gameContainer {
+        height: 99vh;
+        width: 99vw;
+    }
+
+    .headerGame {
+        height: 20vh;
+    }
+
+    .footerGame {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .fightHandsBox {
+        width: 75vw;
+    }
+
+    .fightHands {
+        height: 47vh;
+        width: 75vw;
+    }
+
+    #humanFight {
+        left: 0vw;
+    }
+
+    #computerFight {
+        left: 45vw;
+    }
+
+    .fightHandHuman,
+    .fightHandComputer {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .weapons {
+        width: 45vw;
+        height: 10vh;
+        font-size: 1.5em;
+    }
+
+    #changePlayerModeBtn {
+        font-size: 0.8em;
+        font-weight: bold;
+        width: 40vw;
+    }
+
+    #rulesBtn {
+        font-size: 0.8em;
+        font-weight: bold;
+        width: 22vw;
+    }
+
+    #resultText {
+        font-size: 1.4em;
+        top: 47vh;
+    }
+
+    #gameBtns {
+        width: 80vw;
+        height: 20vh;
+        flex-direction: column;
+        margin-top: 30vh;
+    }
+
+    #startNewGameBtn,
+    #tryAgainBtn {
+        width: 41vw;
+        height: 16vh;
+        font-size: 1em;
+        margin: 1vh 0;
+    }
+
+    #rulesModal {
+        width: 100vw;
+        overflow-y: scroll;
+    }
+
+    .infoModalContent,
+    #rules {
+        width: 85vw;
+        top: -12vh;
+    }
+    @keyframes slidedown {
+        from {
+            top: -300px;
+            opacity: 0;
+        }
+        to {
+            top: -12vh;
+            opacity: 1;
+        }
+    }
+}
