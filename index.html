@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Waste an Hour Having Fun</title>
+</head>
+
+<body>
+    <div id="infoModal" class="modal">
+        <div class="infoModalContent">
+            <div class="closeBtn">
+                <span id="closeInfo">&times;</span>
+            </div>
+            <div class="infoModalBody">
+                <h4>Hey there, bored fella!</h4>
+                <p>
+                    You are looking for some distraction? Well you found the right place for it.
+                </p>
+                <p>
+                    Play Rock-Paper-Scissors and waste some time in a fun way. You can either play against the computer yourself or you can enjoy a battle between two computers by changing the player mode.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="gameContainer">
+        <div class="headerGame">
+
+            <div class="playerColumn">
+                <h2 id="leftScoreCol"></h2>
+                <p class="score" id="scoreLeft"></p>
+            </div>
+            <h1>Waste an Hour Having Fun</h1>
+            <div class="playerColumn">
+                <h2 id="rightScoreCol"></h2>
+                <p class="score" id="scoreRight"></p>
+            </div>
+        </div>
+        <div class="fightBox">
+            <div class="weaponButtons" id="weaponButtonsBox">
+                <button class="weapons" type="button" name="button" id="rock">Rock</button>
+                <button class="weapons" type="button" name="button" id="paper">Paper</button>
+                <button class="weapons" type="button" name="button" id="scissors">Scissors</button>
+            </div>
+            <button id="startFightBtn" class="weapons hidden" type="button" name="button">Start Fight!</button>
+
+            <div class="fightHands hidden" id="fightHandsBox">
+
+
+                <div class="fightHandImgBox" id="humanFight">
+                    <img class="fightHandHuman" id="rockHandHuman" src="images/rock.png" alt="">
+                    <img class="fightHandHuman hidden" id="paperHandHuman" src="images/paper.png" alt="Paper">
+                    <img class="fightHandHuman hidden" id="scissorsHandHuman" src="images/scissors.png" alt="Scissors">
+                </div>
+
+
+                <div class="fightHandImgBox" id="computerFight">
+                    <img class="fightHandComputer" id="rockHandComputer" src="images/rock.png" alt="">
+                    <img class="fightHandComputer hidden" id="paperHandComputer" src="images/paper.png" alt="Paper">
+                    <img class="fightHandComputer hidden" id="scissorsHandComputer" src="images/scissors.png" alt="Scissors">
+                </div>
+
+            </div>
+            <div id="gameBtns" class="hidden">
+                <p id="resultText"></p>
+                <button id="tryAgainBtn" type="button" name="button">Try again!</button>
+                <button id="startNewGameBtn" type="button" name="button">New game!</button>
+            </div>
+
+        </div>
+
+
+        <div class="footerGame">
+            <div id="rulesBtn"> The Rules</div>
+            <div class="hc" id="changePlayerModeBtn"></div>
+        </div>
+    </div>
+    <div id="rulesModal">
+        <div id="rules">
+            <div class="closeBtn">
+                <span href="javascript:void(0)" id="closeRules">&times;</span>
+            </div>
+            <p class="rulesModalBody">
+
+                Rock, Paper, Scissors is a game for two players typically played using the players' hands. The two players each make a fist with one hand and hold the other open, palm upward. Together, they tap their fists in their open palms once, twice, and on the
+                third time form one of three items: a rock (by keeping the hand in a fist), a sheet of paper (by holding the hand flat, palm down), or a pair of scissors (by extending the first two fingers and holding them apart). The winner of that round
+                depends on the items formed. If the same item is formed, it's a tie. If a rock and scissors are formed, the rock wins, because a rock can smash scissors. If scissors and paper are formed, the scissors win, because scissors can cut paper.
+                If paper and a rock are formed, the paper wins, because a sheet of paper can cover a rock. After one round is completed, another is begun. Play continues until one player reaches a predetermined score, or whenever the players' boredom
+                is alleviated.
+            </p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./logic/domNodes.js"></script>
+    <script type="text/javascript" src="./logic/globals.js"></script>
+    <script type="text/javascript" src="./logic/gamePlay.js"></script>
+    <script type="text/javascript" src="./logic/gameUI.js"></script>
+    <script type="text/javascript" src="./logic/eventListeners.js"></script>
+    <script type="text/javascript" src="./logic/init.js"></script>
+</body>
+
+</html>
